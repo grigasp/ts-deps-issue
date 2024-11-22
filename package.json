@@ -1,0 +1,13 @@
+{
+  "name": "ts-deps-issue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --prefix ./packages/a && npm run build --prefix ./packages/b && npm run build --prefix ./packages/c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.12.2"
+}

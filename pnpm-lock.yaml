@@ -1,0 +1,55 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  packages/a:
+    devDependencies:
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+
+  packages/b:
+    dependencies:
+      a:
+        specifier: file:///../a/a-1.0.0.tgz
+        version: file:packages/a/a-1.0.0.tgz
+    devDependencies:
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+
+  packages/c:
+    dependencies:
+      a:
+        specifier: workspace:^
+        version: link:../a
+      b:
+        specifier: workspace:^
+        version: link:../b
+    devDependencies:
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+
+packages:
+
+  a@file:packages/a/a-1.0.0.tgz:
+    resolution: {integrity: sha512-Z9lWp2gH22NZIGy3PtszO+HzHR4KK0wJ432WeYUtUBrW9jaCMIK6aonRea8e0hzjlDVA6EpBCqAGwo5WGoOcxQ==, tarball: file:packages/a/a-1.0.0.tgz}
+    version: 1.0.0
+
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  a@file:packages/a/a-1.0.0.tgz: {}
+
+  typescript@5.6.3: {}
